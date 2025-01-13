@@ -1,0 +1,27 @@
+Active-HDL 15.0.261.9132 2025-01-14 00:53:38
+
+Elaboration top modules:
+Verilog Module                tb_top_2bit_adder
+
+
+----------------------------------------------------------------------------------------------
+Verilog Module          | Library    | Info | Compiler Version          | Compilation Options
+----------------------------------------------------------------------------------------------
+tb_top_2bit_adder       | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+top_2bit_adder          | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+controller_2bit         | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+register_2bit           | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+adder_2bit              | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+----------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------
+Library                 | Comment
+----------------------------------------------------------------------------------------------
+calculator              | None
+----------------------------------------------------------------------------------------------
+
+
+Simulation Options: asim -O5 +access +r +m+tb_top_2bit_adder tb_top_2bit_adder
+
+
+The performance of simulation is reduced. Version Student Edition

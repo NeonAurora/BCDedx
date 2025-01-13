@@ -1,0 +1,5 @@
+.\src\register_2bit.v
+.\src\adder_2bit.v
+.\src\controller_2bit.v
+.\src\top_2bit_adder.v
+.\src\tb_top_2bit_adder.v

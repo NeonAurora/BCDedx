@@ -1,0 +1,1 @@
+-o H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/compile -lc H:/WORKSHOP/Verilog/BCDedx/Calculator/library.cfg -fl H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/projlib.cfg -pli "C:/Aldec/Active-HDL-Student-Edition/bin/systf.dll" -O2 -sve -msg 5 -sv2k17 -work calculator H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/tb_top_2bit_adder.v 

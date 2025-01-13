@@ -1,0 +1,99 @@
+timestamp=1736793741112
+
+[~A]
+H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/BCD_ALU.v_BCD_REGISTER.v_Control_Circuit.v=0*913*1768
+H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/BCD_Calculator.v=0*2886*3571
+H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/adder_2bit.v=0*6093*6518
+H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/controller_2bit.v=0*7533*7979
+H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/register_2bit.v=0*4582*5106
+H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/tb_top_2bit_adder.v=0*11719*12503
+H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/top_2bit_adder.v=0*9735*10740
+LastVerilogToplevel=tb_top_2bit_adder
+ModifyID=7
+Version=74
+
+[~MFT]
+0=4|0calculator.mgf|12503|0
+1=3|1calculator.mgf|17483|5713
+3=6|3calculator.mgf|9662|2977
+
+[$root]
+A/$root=22|||1*17093
+BinW64/$root=3*8454
+SLP=3*8569
+Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|c73a565f2ade592f8ac1c68f484c92164d571d4808af425388c80428991875f0
+
+[BCD_ALU]
+A/BCD_ALU=22|../src/BCD_ALU.v|1|1*406
+BinW64/BCD_ALU=3*183
+R=../src/BCD_ALU.v|1
+SLP=3*1047
+Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|c25c58070043c5a9a632a91291d6198c26527262ddaa47cb266f3a3c4d9b973a4fe4d541502530f22c7d581d8c7ae3c0
+
+[BCD_Calculator]
+A/BCD_Calculator=22|../src/BCD_Calculator.v|1|1*4504
+BinW64/BCD_Calculator=3*3160
+R=../src/BCD_Calculator.v|1
+SLP=3*3284
+Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|22afa8f6e90b94c11c6e31013d6b307d7ef2c198058163ae2108944adbd52211a9edae34ddb64c6adbd11d81bd9ca18b
+
+[BCD_Register]
+A/BCD_Register=22|../src/BCD_REGISTER.v|1|1*1540
+BinW64/BCD_Register=3*1453
+R=../src/BCD_REGISTER.v|1
+SLP=3*1907
+Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|ab9b4673ba132066a2431053e6e9afb37ffa771205082201301b38e7cfa1d28370da49b7e63034fd1c1fe8d3d2728bf3
+
+[Control_Circuit]
+A/Control_Circuit=22|../src/Control_Circuit.v|1|1*2870
+BinW64/Control_Circuit=3*2182
+R=../src/Control_Circuit.v|1
+SLP=3*2599
+Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|c0bba2714fbe2708cc5c00ec227e7d1493665a36da32eff567c85fed88525bc106232a68f56b530b02acb7fb7a832a56
+
+[adder_2bit]
+A/adder_2bit=22|../src/adder_2bit.v|2|1*12841
+BinW64/adder_2bit=3*6813
+R=../src/adder_2bit.v|2
+SLP=3*7239
+Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|b4c6cb2a1f760f986c401a27357bdf390fb4a6f7a8ec8f51a3ca499bc69ed4806d6c89dc2421b1906fd7b114e2ed00fd
+
+[controller_2bit]
+A/controller_2bit=22|../src/controller_2bit.v|2|1*13829
+BinW64/controller_2bit=3*7415
+R=../src/controller_2bit.v|2
+SLP=3*7773
+Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|e08aa2139adc7fc03c940ffff42006a1e7c3201e49ac118572f5ca291b26d7d9ca548845bc4028b66e7a362dc46d91d2
+
+[register_2bit]
+A/register_2bit=22|../src/register_2bit.v|2|1*11513
+BinW64/register_2bit=3*6069
+R=../src/register_2bit.v|2
+SLP=3*6524
+Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|ceee702a4e4beaef51c355813dc16155eae1d1c2e3f252a2d907efc372493e27db02bc40df33c6e6e465b0ac228cc745
+
+[tb_top_2bit_adder]
+A/tb_top_2bit_adder=22|../src/tb_top_2bit_adder.v|4|1*17483
+BinW64/tb_top_2bit_adder=3*8637
+R=../src/tb_top_2bit_adder.v|4
+SLP=3*9662
+Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|03fb925b2d539b9bbd0a205e1fa74b3f29b5347cc9fc4cf7f216409338b07428c6643ed37130d5c12c53e0b77ef48689
+
+[top_2bit_adder]
+A/top_2bit_adder=22|../src/top_2bit_adder.v|6|1*14864
+BinW64/top_2bit_adder=3*7948
+R=../src/top_2bit_adder.v|6
+SLP=3*8230
+Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|72f4e6e7305d7611fbdafb40eb2f0b759ab155c6aacc7e887f1691579294bec25087f6d131db052eb8b83bfaf7dfe9ef
+
+[~U]
+$root=12|0*11290|
+BCD_ALU=12|0*198||0x10
+BCD_Calculator=12|0*2590||0x10
+BCD_Register=12|0*428||0x10
+Control_Circuit=12|0*668||0x10
+adder_2bit=12|0*9007|
+controller_2bit=12|0*9215|
+register_2bit=12|0*8776|
+tb_top_2bit_adder=12|0*11536||0x10
+top_2bit_adder=12|0*9438||0x10
