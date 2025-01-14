@@ -1,14 +1,14 @@
-Active-HDL 15.0.261.9132 2025-01-14 11:14:18
+Active-HDL 15.0.261.9132 2025-01-14 11:22:08
 
 Elaboration top modules:
-Verilog Module                tb_top_2bit_alu_mult
+Verilog Module                tb_top_2bit_alu_div
 
 
 ----------------------------------------------------------------------------------------------
 Verilog Module          | Library    | Info | Compiler Version          | Compilation Options
 ----------------------------------------------------------------------------------------------
-tb_top_2bit_alu_mult    | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
-top_2bit_alu_mult       | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+tb_top_2bit_alu_div     | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+top_2bit_alu_div        | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
 controller_2bit         | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
 register_2bit           | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
 alu_2bit                | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
@@ -21,7 +21,7 @@ calculator              | None
 ----------------------------------------------------------------------------------------------
 
 
-Simulation Options: asim -O5 +access +r +m+tb_top_2bit_alu_mult tb_top_2bit_alu_mult
+Simulation Options: asim -O5 +access +r +m+tb_top_2bit_alu_div tb_top_2bit_alu_div
 
 
 The performance of simulation is reduced. Version Student Edition

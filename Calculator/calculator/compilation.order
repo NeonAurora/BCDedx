@@ -1,5 +1,5 @@
 .\src\register_2bit.v
 .\src\alu_2bit.v
 .\src\controller_2bit.v
-.\src\top_2bit_alu_mult.v
-.\src\tb_top_2bit_alu_mult.v
+.\src\top_2bit_alu_div.v
+.\src\tb_top_2bit_alu_div.v
