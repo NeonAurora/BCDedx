@@ -1,5 +1,7 @@
 i<>.\src\register_2bit.v
 i<>.\src\adder_2bit.v
-i<>.\src\controller_2bit.v
 i<>.\src\top_2bit_adder.v
 i<>.\src\tb_top_2bit_adder.v
+i<>.\src\controller_2bit.v
+i<>.\src\top_2bit_alu.v
+i<>.\src\tb_top_2bit_alu.v

@@ -1,23 +1,23 @@
-// File: top_2bit_adder.v
-`include "register_2bit.v"
-`include "adder_2bit.v"
-`include "controller_2bit.v"
+// File: top_2bit_alu_mult.v	  
 
-module top_2bit_adder (
+module top_2bit_alu_mult (
     input  wire       clk,
     input  wire       rst,
     input  wire [1:0] inA,
     input  wire [1:0] inB,
     input  wire       btnLoadA,
     input  wire       btnLoadB,
-    output wire [2:0] led_out  // 3-bit output to show the sum
+    input  wire [1:0] op,    // 00=Add, 01=Sub, 10=Mul
+    output wire [3:0] led_out, 
+    output wire       flag_out // carry/borrow/overflow
 );
 
     // Internal signals
     wire loadA, loadB;
     wire [1:0] regA_out;
     wire [1:0] regB_out;
-    wire [2:0] sum;
+    wire [3:0] alu_result;
+    wire       status;
 
     // -----------------
     //  Controller
@@ -49,17 +49,20 @@ module top_2bit_adder (
     );
 
     // -----------------
-    //  2-bit Adder
+    //  ALU (Add/Sub/Multiply)
     // -----------------
-    adder_2bit adder_inst (
+    alu_2bit alu_inst (
         .a(regA_out),
         .b(regB_out),
-        .sum(sum)
+        .op(op),         // 00=Add, 01=Sub, 10=Mul
+        .result(alu_result),
+        .status(status)  // carry/borrow/overflow
     );
 
     // -----------------
-    //  Output (LEDs)
+    //  Output
     // -----------------
-    assign led_out = sum;
+    assign led_out = alu_result;
+    assign flag_out = status;
 
 endmodule

@@ -5,8 +5,6 @@ module controller_2bit (
     output wire loadA,
     output wire loadB
 );
-    // In a real design, this would be more complex, 
-    // possibly an FSM that coordinates operation.
     assign loadA = btnLoadA;
     assign loadB = btnLoadB;
 endmodule
