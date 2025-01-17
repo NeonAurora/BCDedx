@@ -1,89 +1,52 @@
 # ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "top_2bit_alu" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "top_4bit_alu" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Warning: ELBREAD_0049 The "controller_2bit" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "register_2bit" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "alu_2bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "register_4bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "alu_4bit" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Elaboration time 0.0 [s].
-alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/register_2bit.v $dsn/src/alu_2bit.v $dsn/src/controller_2bit.v $dsn/src/top_2bit_alu_mult.v $dsn/src/tb_top_2bit_alu_mult.v
-# Unit top modules: tb_top_2bit_alu.
+alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/full_adder.v
+# Unit top modules: full_adder.
 # Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
 # done
-# ELBREAD: Elaboration process.
-# ELBREAD: Elaboration time 0.0 [s].
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "top_2bit_alu_mult" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "controller_2bit" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "register_2bit" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "alu_2bit" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-asim -O5 +access +r +m+tb_top_2bit_alu_mult tb_top_2bit_alu_mult
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "top_2bit_alu_mult" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "controller_2bit" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "register_2bit" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "alu_2bit" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.2 [s]
-# SLP: Finished : 0.2 [s]
-# SLP: 0 primitives and 15 (100.00%) other processes in SLP
-# SLP: 51 (100.00%) signals in SLP and 0 interface signals
-# ELAB2: Elaboration final pass complete - time: 0.2 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4680 kB (elbread=427 elab2=4117 kernel=135 sdf=0)
-# KERNEL: ASDB file was created in location H:\WORKSHOP\Verilog\BCDedx\Calculator\calculator\src\wave.asdb
-#  11:14 AM, Tuesday, January 14, 2025
-#  Simulation has been initialized
-run
-# KERNEL: ADD: A=2, B=3 => led_out=0101 (decimal 5), flag_out=0 (carry)
-# KERNEL: SUB: A=1, B=2 => led_out=0011 (2's complement), flag_out=1 (borrow)
-# KERNEL: MUL: A=3, B=2 => led_out=0110 (decimal 6), flag_out=0 (overflow?)
-# RUNTIME: Info: RUNTIME_0070 tb_top_2bit_alu.v (112): $stop called.
-# KERNEL: Time: 180 ns,  Iteration: 0,  Instance: /tb_top_2bit_alu_mult,  Process: @INITIAL#37_1@.
-# KERNEL: Stopped at time 180 ns + 0.
-alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/alu_2bit.v
+alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/ripple_adder_4bit.v
+# Unit top modules: ripple_adder_4bit.
 # Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
 # done
-alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/register_2bit.v $dsn/src/alu_2bit.v $dsn/src/controller_2bit.v $dsn/src/top_2bit_alu_div.v $dsn/src/tb_top_2bit_alu_mult.v
-# Error: VCP7803 register_2bit.v : (2, 21): Duplicated declaration of unit register_2bit. Use "-err VCP7803 W1" to suppress this error.
-# Info: VCP7802 register_2bit.v : (2, 21): ... see previous "register_2bit" declaration.
-# Error: VCP7803 alu_2bit.v : (2, 16): Duplicated declaration of unit alu_2bit. Use "-err VCP7803 W1" to suppress this error.
-# Info: VCP7802 alu_2bit.v : (2, 16): ... see previous "alu_2bit" declaration.
-# Error: VCP7803 controller_2bit.v : (2, 23): Duplicated declaration of unit controller_2bit. Use "-err VCP7803 W1" to suppress this error.
-# Info: VCP7802 controller_2bit.v : (2, 23): ... see previous "controller_2bit" declaration.
+alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/bcd_adder_4bit.v
+# Unit top modules: bcd_adder_4bit.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/alu_4bit.v
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/alu_4bit.v
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/bcd_adder_4bit.v
+# Unit top modules: bcd_adder_4bit.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/alu_4bit.v
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/register_4bit.v $dsn/src/alu_4bit.v $dsn/src/controller_2bit.v $dsn/src/top_4bit_alu.v $dsn/src/tb_top_4bit_alu.v $dsn/src/full_adder.v $dsn/src/ripple_adder_4bit.v $dsn/src/bcd_adder_4bit.v
+# Error: VCP7803 full_adder.v : (2, 18): Duplicated declaration of unit full_adder. Use "-err VCP7803 W1" to suppress this error.
+# Info: VCP7802 full_adder.v : (2, 18): ... see previous "full_adder" declaration.
+# Error: VCP7803 full_adder.v : (2, 18): Duplicated declaration of unit full_adder. Use "-err VCP7803 W1" to suppress this error.
+# Info: VCP7802 full_adder.v : (2, 18): ... see previous "full_adder" declaration.
+# Error: VCP7803 ripple_adder_4bit.v : (4, 25): Duplicated declaration of unit ripple_adder_4bit. Use "-err VCP7803 W1" to suppress this error.
+# Info: VCP7802 ripple_adder_4bit.v : (4, 25): ... see previous "ripple_adder_4bit" declaration.
 # Compile failure 3 Errors 0 Warnings  Analysis time: 0[s].
-alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/register_2bit.v $dsn/src/alu_2bit.v $dsn/src/controller_2bit.v $dsn/src/top_2bit_alu_div.v $dsn/src/tb_top_2bit_alu_mult.v
-# Unit top modules: top_2bit_alu_div tb_top_2bit_alu.
+alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/register_4bit.v $dsn/src/alu_4bit.v $dsn/src/controller_2bit.v $dsn/src/top_4bit_alu.v $dsn/src/tb_top_4bit_alu.v $dsn/src/full_adder.v $dsn/src/ripple_adder_4bit.v $dsn/src/bcd_adder_4bit.v
+# Unit top modules: tb_top_4bit_alu.
 # Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
 # done
-alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/register_2bit.v $dsn/src/alu_2bit.v $dsn/src/controller_2bit.v $dsn/src/top_2bit_alu_div.v $dsn/src/tb_top_2bit_alu_div.v
-# Unit top modules: tb_top_2bit_alu_div.
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
-endsim
-# VSIM: Simulation has finished.
-asim -O5 +access +r +m+tb_top_2bit_alu_mult tb_top_2bit_alu_mult
+asim -O5 +access +r +m+tb_top_4bit_alu tb_top_4bit_alu
 # ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "top_2bit_alu_mult" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "top_4bit_alu" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Warning: ELBREAD_0049 The "controller_2bit" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "register_2bit" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "alu_2bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "register_4bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "alu_4bit" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Elaboration time 0.0 [s].
 # VSIM: Stack memory: 32MB
 # VSIM: Retval memory: 32MB
@@ -98,30 +61,4 @@ asim -O5 +access +r +m+tb_top_2bit_alu_mult tb_top_2bit_alu_mult
 # SLP: Elaboration phase ...
 # SLP: Elaboration phase ... done : 0.0 [s]
 # SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.3 [s]
-# SLP: Finished : 0.3 [s]
-# SLP: 0 primitives and 17 (100.00%) other processes in SLP
-# SLP: 54 (100.00%) signals in SLP and 0 interface signals
-# ELAB2: Elaboration final pass complete - time: 0.3 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4682 kB (elbread=427 elab2=4119 kernel=135 sdf=0)
-# KERNEL: ASDB file was created in location H:\WORKSHOP\Verilog\BCDedx\Calculator\calculator\src\wave.asdb
-#  11:21 AM, Tuesday, January 14, 2025
-#  Simulation has been initialized
-run
-# KERNEL: ADD: A=2, B=3 => led_out=0101 (decimal 5), flag_out=0 (carry)
-# KERNEL: SUB: A=1, B=2 => led_out=0011 (2's complement), flag_out=1 (borrow)
-# KERNEL: MUL: A=3, B=2 => led_out=0110 (decimal 6), flag_out=0 (overflow?)
-# RUNTIME: Info: RUNTIME_0070 tb_top_2bit_alu.v (112): $stop called.
-# KERNEL: Time: 180 ns,  Iteration: 0,  Instance: /tb_top_2bit_alu_mult,  Process: @INITIAL#37_1@.
-# KERNEL: Stopped at time 180 ns + 0.
-alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/register_2bit.v $dsn/src/alu_2bit.v $dsn/src/controller_2bit.v $dsn/src/top_2bit_alu_div.v $dsn/src/tb_top_2bit_alu_div.v
-# Unit top modules: tb_top_2bit_alu_div.
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
-endsim
-# VSIM: Simulation has finished.
+# SLP: Gen

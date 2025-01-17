@@ -1,17 +1,20 @@
-Active-HDL 15.0.261.9132 2025-01-14 11:22:08
+Active-HDL 15.0.261.9132 2025-01-17 19:33:25
 
 Elaboration top modules:
-Verilog Module                tb_top_2bit_alu_div
+Verilog Module                tb_top_4bit_alu
 
 
 ----------------------------------------------------------------------------------------------
 Verilog Module          | Library    | Info | Compiler Version          | Compilation Options
 ----------------------------------------------------------------------------------------------
-tb_top_2bit_alu_div     | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
-top_2bit_alu_div        | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+tb_top_4bit_alu         | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+top_4bit_alu            | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
 controller_2bit         | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
-register_2bit           | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
-alu_2bit                | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+register_4bit           | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+alu_4bit                | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+bcd_adder_4bit          | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+ripple_adder_4bit       | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+full_adder              | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
 ----------------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------
@@ -21,7 +24,7 @@ calculator              | None
 ----------------------------------------------------------------------------------------------
 
 
-Simulation Options: asim -O5 +access +r +m+tb_top_2bit_alu_div tb_top_2bit_alu_div
+Simulation Options: asim -O5 +access +r +m+tb_top_4bit_alu tb_top_4bit_alu
 
 
 The performance of simulation is reduced. Version Student Edition

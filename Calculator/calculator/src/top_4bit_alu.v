@@ -1,20 +1,22 @@
-// File: top_2bit_alu_div.v		 
-module top_2bit_alu_div (
+// File: top_4bit_alu.v		   
+
+module top_4bit_alu (
     input  wire       clk,
     input  wire       rst,
-    input  wire [1:0] inA,
-    input  wire [1:0] inB,
+    input  wire [3:0] inA,      // 4-bit input for A
+    input  wire [3:0] inB,      // 4-bit input for B
     input  wire       btnLoadA,
     input  wire       btnLoadB,
-    input  wire [1:0] op,        // 00=Add, 01=Sub, 10=Mul, 11=Div
-    output wire [3:0] led_out,   // 4-bit ALU result
-    output wire       flag_out   // carry/borrow/overflow/div0
+    input  wire [1:0] op,       // 00=Add, 01=Sub, 10=Mul, 11=Div
+    output wire [7:0] led_out,  // 8-bit ALU result
+    output wire       flag_out  // carry/borrow/overflow/div0
 );
 
+    // Signals
     wire loadA, loadB;
-    wire [1:0] regA_out;
-    wire [1:0] regB_out;
-    wire [3:0] alu_result;
+    wire [3:0] regA_out;
+    wire [3:0] regB_out;
+    wire [7:0] alu_result;
     wire       status;
 
     // Controller
@@ -25,8 +27,8 @@ module top_2bit_alu_div (
         .loadB(loadB)
     );
 
-    // Registers
-    register_2bit regA (
+    // 4-bit Register for A
+    register_4bit regA (
         .clk(clk),
         .rst(rst),
         .load(loadA),
@@ -34,7 +36,8 @@ module top_2bit_alu_div (
         .q(regA_out)
     );
 
-    register_2bit regB (
+    // 4-bit Register for B
+    register_4bit regB (
         .clk(clk),
         .rst(rst),
         .load(loadB),
@@ -42,11 +45,11 @@ module top_2bit_alu_div (
         .q(regB_out)
     );
 
-    // ALU
-    alu_2bit alu_inst (
+    // 4-bit ALU
+    alu_4bit alu_inst (
         .a(regA_out),
         .b(regB_out),
-        .op(op),          // 00=Add, 01=Sub, 10=Mul, 11=Div
+        .op(op),
         .result(alu_result),
         .status(status)
     );

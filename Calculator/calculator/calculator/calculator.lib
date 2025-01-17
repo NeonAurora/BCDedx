@@ -1,11 +1,14 @@
-timestamp=1736832120640
+timestamp=1737120790686
 
 [~A]
 H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/BCD_ALU.v_BCD_REGISTER.v_Control_Circuit.v=0*913*1768
 H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/BCD_Calculator.v=0*2886*3571
 H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/adder_2bit.v=0*6093*6518
 H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/alu_2bit.v=0*107520*108439
+H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/alu_4bit.v=0*145698*146761
+H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/bcd_adder_4bit.v=0*143488*144541
 H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/controller_2bit.v=0*97824*98270
+H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/full_adder.v=0*132146*132619
 H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/register_2bit.v=0*94390*94914
 H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/register_2bit.v_alu_2bit.v=0*52770*53609
 H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/register_2bit.v_alu_2bit.v_controller_2bit.v=0*55155*56092
@@ -15,25 +18,29 @@ H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/register_2bit.v_alu_2bit.v_
 H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/register_2bit.v_alu_2bit.v_controller_2bit.v_top_2bit_alu_div.v_tb_top_2bit_alu_mult.v=0*110474*112622
 H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/register_2bit.v_alu_2bit.v_controller_2bit.v_top_2bit_alu_mult.v_tb_top_2bit_alu.v=0*91105*93201
 H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/register_2bit.v_alu_2bit.v_controller_2bit.v_top_2bit_alu_mult.v_tb_top_2bit_alu_mult.v=0*104321*106326
+H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/register_4bit.v_alu_4bit.v_controller_2bit.v_top_4bit_alu.v_tb_top_2bit_alu.v=0*123873*126300
+H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/register_4bit.v_alu_4bit.v_controller_2bit.v_top_4bit_alu.v_tb_top_4bit_alu.v=0*128518*130929
+H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/register_4bit.v_alu_4bit.v_controller_2bit.v_top_4bit_alu.v_tb_top_4bit_alu.v_full_adder.v_ripple_adder_4bit.v_bcd_adder_4bit.v=0*149688*152853
+H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/ripple_adder_4bit.v=0*133984*134720
 H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/tb_top_2bit_adder.v=0*48956*49292
 H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/tb_top_2bit_alu.v=0*101239*102293
 H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/top_2bit_adder.v=0*9735*10740
 H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/top_2bit_alu.v=0*88260*89039
 H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/top_2bit_alu_mult.v=0*99434*100202
-LastVerilogToplevel=tb_top_2bit_alu_div
-ModifyID=52
+LastVerilogToplevel=tb_top_4bit_alu
+ModifyID=62
 Version=74
 
 [~MFT]
-0=10|0calculator.mgf|121663|50543
-1=12|1calculator.mgf|200982|173421
-3=24|3calculator.mgf|149587|130076
+0=11|0calculator.mgf|152853|55360
+1=18|1calculator.mgf|262359|220153
+3=36|3calculator.mgf|195466|164619
 
 [$root]
-A/$root=22|||1*193209
-BinW64/$root=3*142590
-SLP=3*142705
-Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|c73a565f2ade592f8ac1c68f484c9216d8872db30a2e670d5c10cae406d99a3d
+A/$root=22|||1*248667
+BinW64/$root=3*185073
+SLP=3*185188
+Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|c73a565f2ade592f8ac1c68f484c92164a301bceef3178f62cbdbf03c698840c
 
 [BCD_ALU]
 A/BCD_ALU=22|../src/BCD_ALU.v|1|1*406
@@ -77,12 +84,33 @@ R=../src/alu_2bit.v|2
 SLP=3*145550
 Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|55e2a56033b8f6319d1e5666b074f3cdbd222831cd4e4e29cd5504dd88972ed3635e829bd5d75a034afcb85708a51185
 
+[alu_4bit]
+A/alu_4bit=22|../src/alu_4bit.v|2|1*250414
+BinW64/alu_4bit=3*186003
+R=../src/alu_4bit.v|2
+SLP=3*187868
+Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|ce0fad6ba9ac217f7bc0146d86b03a6e87dff3ca29dc89f6fb5ef56f2a729a507fc68d03caebd25cfbda25d2a472cee2
+
+[bcd_adder_4bit]
+A/bcd_adder_4bit=22|../src/bcd_adder_4bit.v|3|1*252988
+BinW64/bcd_adder_4bit=3*188997
+R=../src/bcd_adder_4bit.v|3
+SLP=3*189615
+Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|6d0a21081f4b0193d5d5fdfb6c224d4ab138d5a7363407dbfdf497ee681295eadc9ade5469d8d5b04544ea14d02631b2
+
 [controller_2bit]
-A/controller_2bit=22|../src/controller_2bit.v|2|1*197365
-BinW64/controller_2bit=3*146616
+A/controller_2bit=22|../src/controller_2bit.v|2|1*255252
+BinW64/controller_2bit=3*189965
 R=../src/controller_2bit.v|2
-SLP=3*146974
-Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|e08aa2139adc7fc03c940ffff42006a1e7c3201e49ac118572f5ca291b26d7d9840ed0afb3648a25f714ca53ce410a6f
+SLP=3*190323
+Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|e08aa2139adc7fc03c940ffff42006a1e7c3201e49ac118572f5ca291b26d7d934202961d0b86ac41094b6e73e4d503d
+
+[full_adder]
+A/full_adder=22|../src/full_adder.v|2|1*261352
+BinW64/full_adder=3*194640
+R=../src/full_adder.v|2
+SLP=3*195115
+Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|b6bc4c72c6b4732d30366d04e0b9d81ca93b35da59acef6f28d70118359e933ea86cab520eb432af832d4f316943040d
 
 [register_2bit]
 A/register_2bit=22|../src/register_2bit.v|2|1*193631
@@ -90,6 +118,20 @@ BinW64/register_2bit=3*142773
 R=../src/register_2bit.v|2
 SLP=3*143228
 Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|ceee702a4e4beaef51c355813dc16155eae1d1c2e3f252a2d907efc372493e27213c3d15252db95dcbc20d585f2cc827
+
+[register_4bit]
+A/register_4bit=22|../src/register_4bit.v|2|1*249089
+BinW64/register_4bit=3*185256
+R=../src/register_4bit.v|2
+SLP=3*185711
+Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|2509097e07099ca4321270208a3a52f75039d9a53ea7df2228f0051934241bd0408fdf170fa0ff27a1a06dfeefce91b2
+
+[ripple_adder_4bit]
+A/ripple_adder_4bit=22|../src/ripple_adder_4bit.v|3|1*262359
+BinW64/ripple_adder_4bit=3*195339
+R=../src/ripple_adder_4bit.v|3
+SLP=3*195466
+Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|8447f086fcfc59a80e4ef6e31d30155cd92d1363b8ed5ae664393702a72c996e14b42a4868a1e175ace86cbe66270fa7
 
 [tb_top_2bit_adder]
 A/tb_top_2bit_adder=22|../src/tb_top_2bit_adder.v|4|1*17483
@@ -119,6 +161,13 @@ R=../src/tb_top_2bit_alu.v|4
 SLP=3*115243
 Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|03fb925b2d539b9bbd0a205e1fa74b3f731708446f7929881c3ba9c4e763b9ba4869d334e908d4605f4d19c1735c4626
 
+[tb_top_4bit_alu]
+A/tb_top_4bit_alu=22|../src/tb_top_4bit_alu.v|4|1*258912
+BinW64/tb_top_4bit_alu=3*191085
+R=../src/tb_top_4bit_alu.v|4
+SLP=3*192932
+Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|0e42cc7b05fcb092c94ccf6eae9356dfa695ccbf27cb46920edf91ace897c9828b697b1153ba9233152c5bca2a7de205
+
 [top_2bit_adder]
 A/top_2bit_adder=22|../src/top_2bit_adder.v|6|1*14864
 BinW64/top_2bit_adder=3*7948
@@ -147,21 +196,35 @@ R=../src/top_2bit_alu_mult.v|3
 SLP=3*120696
 Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|c911eb3b13028395293efaf0f8a53e34694c56122ca6096bbd64ad2fb199353fd00570d9c90f92797dac47870ed2739b
 
+[top_4bit_alu]
+A/top_4bit_alu=22|../src/top_4bit_alu.v|3|1*256282
+BinW64/top_4bit_alu=3*190494
+R=../src/top_4bit_alu.v|3
+SLP=3*190831
+Version=15.0.261.9132 (Windows64)|0000000b789cd3f53752d02d2e33ca3634070010af02ea|152bd66c4ea371ca705208393bb3df26a9adb095b0dca05072d33192877e2608ec737a15ed0880da807986cde2c07e35
+
 [~U]
-$root=12|0*117810|
+$root=12|0*147305|
 BCD_ALU=12|0*198||0x10
 BCD_Calculator=12|0*2590||0x10
 BCD_Register=12|0*428||0x10
 Control_Circuit=12|0*668||0x10
 adder_2bit=12|0*9007|
 alu_2bit=12|0*118351|
-controller_2bit=12|0*118582|
+alu_4bit=12|0*147878|
+bcd_adder_4bit=12|0*148143|
+controller_2bit=12|0*148408|
+full_adder=12|0*149211|
 register_2bit=12|0*118120|
+register_4bit=12|0*147647|
+ripple_adder_4bit=12|0*149427|
 tb_top_2bit_adder=12|0*11536||0x10
 tb_top_2bit_alu=12|0*110295||0x10
 tb_top_2bit_alu_div=12|0*119122||0x10
 tb_top_2bit_alu_mult=12|0*101049||0x10
+tb_top_4bit_alu=12|0*148973||0x10
 top_2bit_adder=12|0*9438||0x10
 top_2bit_alu=12|0*60872|
 top_2bit_alu_div=12|0*118805|
 top_2bit_alu_mult=12|0*103823|
+top_4bit_alu=12|0*148631|
