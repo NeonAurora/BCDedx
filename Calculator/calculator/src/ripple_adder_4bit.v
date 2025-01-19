@@ -7,7 +7,8 @@ module ripple_adder_4bit (
     output wire [3:0] sum,
     output wire       cout
 );
-    wire c1, c2, c3;  // internal carry lines
+    // internal carry lines
+    wire c1, c2, c3;
 
     // bit 0
     full_adder fa0 (

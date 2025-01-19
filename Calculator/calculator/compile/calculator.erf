@@ -1,0 +1,1 @@
+WARNING VCP2597 "Some unconnected ports remain at instance: bcd_sub_inst. Module bcd_subtractor_8bit_eac has unconnected  port(s) : debug_Adder1." "H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/alu_8bit.v" 28 1

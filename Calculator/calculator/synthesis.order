@@ -8,3 +8,5 @@ i<>.\src\tb_top_2bit_alu.v
 i<>.\src\full_adder.v
 i<>.\src\ripple_adder_4bit.v
 i<>.\src\bcd_adder_4bit.v
+i<>.\src\bcd_subtractor_4bit.v
+i<>.\src\bcd_subtractor_8bit_eac.v

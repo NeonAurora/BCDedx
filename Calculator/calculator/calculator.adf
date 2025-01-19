@@ -21,23 +21,31 @@ ON_SERVERFARM_SIM=0
 [IMPLEMENTATION]
 UCF=
 [Files]
-/register_4bit.v=-1
-/alu_4bit.v=-1
+/register_8bit.v=-1
+/alu_8bit.v=-1
 /controller_2bit.v=-1
-/top_4bit_alu.v=-1
-/tb_top_4bit_alu.v=-1
+/top_8bit_alu.v=-1
+/tb_top_8bit_alu.v=-1
 /full_adder.v=-1
+/ripple_adder_8bit.v=-1
+/bcd_adder_8bit.v=-1
+/bcd_subtractor_8bit.v=-1
 /ripple_adder_4bit.v=-1
-/bcd_adder_4bit.v=-1
+/tb_top_8bit_alu.v=-1
+/bcd_subtractor_8bit_eac.v=-1
 [Files.Data]
-.\src\register_4bit.v=Verilog Source Code
-.\src\alu_4bit.v=Verilog Source Code
+.\src\register_8bit.v=Verilog Source Code
+.\src\alu_8bit.v=Verilog Source Code
 .\src\controller_2bit.v=Verilog Source Code
-.\src\top_4bit_alu.v=Verilog Source Code
-.\src\tb_top_4bit_alu.v=Verilog Source Code
+.\src\top_8bit_alu.v=Verilog Source Code
+.\src\tb_top_8bit_alu.v=Verilog Source Code
 .\src\full_adder.v=Verilog Source Code
+.\src\ripple_adder_8bit.v=Verilog Source Code
+.\src\bcd_adder_8bit.v=Verilog Source Code
+.\src\bcd_subtractor_8bit.v=Verilog Source Code
 .\src\ripple_adder_4bit.v=Verilog Source Code
-.\src\bcd_adder_4bit.v=Verilog Source Code
+.\src\tb_top_8bit_alu.v=Verilog Source Code
+.\src\bcd_subtractor_8bit_eac.v=Verilog Source Code
 [HierarchyViewer]
 HierarchyInformation=
 ShowHide=ShowTopLevel

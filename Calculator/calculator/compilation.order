@@ -1,8 +1,11 @@
-.\src\register_4bit.v
-.\src\alu_4bit.v
+.\src\register_8bit.v
+.\src\alu_8bit.v
 .\src\controller_2bit.v
-.\src\top_4bit_alu.v
-.\src\tb_top_4bit_alu.v
+.\src\top_8bit_alu.v
+.\src\tb_top_8bit_alu.v
 .\src\full_adder.v
+.\src\ripple_adder_8bit.v
+.\src\bcd_adder_8bit.v
+.\src\bcd_subtractor_8bit.v
 .\src\ripple_adder_4bit.v
-.\src\bcd_adder_4bit.v
+.\src\bcd_subtractor_8bit_eac.v
