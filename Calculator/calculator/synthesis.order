@@ -10,3 +10,8 @@ i<>.\src\ripple_adder_4bit.v
 i<>.\src\bcd_adder_4bit.v
 i<>.\src\bcd_subtractor_4bit.v
 i<>.\src\bcd_subtractor_8bit_eac.v
+i<>.\src\ripple_adder_16bit.v
+i<>.\src\mul_8bit_logic.v
+i<>.\src\ripple_sub_9bit.v
+i<>.\src\div_stage.v
+i<>.\src\div_8bit_logic.v

@@ -1,0 +1,397 @@
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "top_8bit_alu" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "controller_2bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "register_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "alu_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/ripple_adder_16bit.v
+# Unit top modules: ripple_adder_16bit.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/alu_8bit.v
+# Warning: VCP2515 alu_8bit.v : (44, 7): Undefined module: mul_8bit_logic was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 alu_8bit.v : (28, 1): Some unconnected ports remain at instance: bcd_sub_inst. Module bcd_subtractor_8bit_eac has unconnected  port(s) : debug_Adder1.
+# Compile success 0 Errors 2 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/mul_8bit_logic.v
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/alu_8bit.v
+# Warning: VCP2597 alu_8bit.v : (28, 1): Some unconnected ports remain at instance: bcd_sub_inst. Module bcd_subtractor_8bit_eac has unconnected  port(s) : debug_Adder1.
+# Compile success 0 Errors 1 Warnings  Analysis time: 0[s].
+# done
+asim -O5 +access +r +m+tb_top_8bit_alu tb_top_8bit_alu
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "top_8bit_alu" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "controller_2bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "register_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "alu_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "mul_8bit_logic" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ripple_adder_16bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.3 [s]
+# SLP: Finished : 0.4 [s]
+# SLP: 0 primitives and 189 (100.00%) other processes in SLP
+# SLP: 1208 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.4 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4718 kB (elbread=430 elab2=4153 kernel=134 sdf=0)
+# KERNEL: ASDB file was created in location H:\WORKSHOP\Verilog\BCDedx\Calculator\calculator\src\wave.asdb
+#  8:45 PM, Sunday, January 19, 2025
+#  Simulation has been initialized
+run
+# KERNEL: ADD: A= 10, B=  9 => led_out=0019, flag=0
+# KERNEL: SUB: A=  2, B=  7 => led_out=0004, flag=0
+# KERNEL: MUL: A= 15, B= 10 => led_out=0096, flag=0
+# KERNEL: DIV: A=100, B=  3 => led_out=0121, remainder=  1, quotient= 33, flag=0
+# KERNEL: DIV-ZERO: A= 20, B=  0 => led_out=ffff, flag=1
+# RUNTIME: Info: RUNTIME_0070 tb_top_8bit_alu.v (105): $stop called.
+# KERNEL: Time: 230 ns,  Iteration: 0,  Instance: /tb_top_8bit_alu,  Process: @INITIAL#36_1@.
+# KERNEL: Stopped at time 230 ns + 0.
+alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/register_8bit.v $dsn/src/alu_8bit.v $dsn/src/controller_2bit.v $dsn/src/top_8bit_alu.v $dsn/src/tb_top_8bit_alu.v $dsn/src/full_adder.v $dsn/src/ripple_adder_8bit.v $dsn/src/bcd_adder_8bit.v $dsn/src/bcd_subtractor_8bit.v $dsn/src/ripple_adder_4bit.v $dsn/src/bcd_subtractor_8bit_eac.v $dsn/src/ripple_adder_16bit.v $dsn/src/mul_8bit_logic.v
+# Warning: VCP2597 alu_8bit.v : (28, 1): Some unconnected ports remain at instance: bcd_sub_inst. Module bcd_subtractor_8bit_eac has unconnected  port(s) : debug_Adder1.
+# Unit top modules: tb_top_8bit_alu bcd_subtractor_8bit.
+# Compile success 0 Errors 1 Warnings  Analysis time: 0[s].
+# done
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +m+tb_top_8bit_alu tb_top_8bit_alu
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "top_8bit_alu" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "controller_2bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "register_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "alu_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.2 [s]
+# SLP: Finished : 0.2 [s]
+# SLP: 0 primitives and 189 (100.00%) other processes in SLP
+# SLP: 1208 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.2 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4718 kB (elbread=430 elab2=4153 kernel=134 sdf=0)
+# KERNEL: ASDB file was created in location H:\WORKSHOP\Verilog\BCDedx\Calculator\calculator\src\wave.asdb
+#  8:45 PM, Sunday, January 19, 2025
+#  Simulation has been initialized
+run
+# KERNEL: ADD: A= 10, B=  9 => led_out=0019, flag=0
+# KERNEL: SUB: A=  2, B=  7 => led_out=0004, flag=0
+# KERNEL: MUL: A= 15, B= 10 => led_out=0096, flag=0
+# KERNEL: DIV: A=100, B=  3 => led_out=0121, remainder=  1, quotient= 33, flag=0
+# KERNEL: DIV-ZERO: A= 20, B=  0 => led_out=ffff, flag=1
+# RUNTIME: Info: RUNTIME_0070 tb_top_8bit_alu.v (105): $stop called.
+# KERNEL: Time: 230 ns,  Iteration: 0,  Instance: /tb_top_8bit_alu,  Process: @INITIAL#36_1@.
+# KERNEL: Stopped at time 230 ns + 0.
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +m+tb_top_8bit_alu tb_top_8bit_alu
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "top_8bit_alu" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "controller_2bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "register_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "alu_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/tb_top_8bit_alu.v
+# Unit top modules: tb_top_8bit_alu.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# done
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "top_8bit_alu" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "controller_2bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "register_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "alu_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.2 [s]
+# SLP: Finished : 0.2 [s]
+# SLP: 0 primitives and 189 (100.00%) other processes in SLP
+# SLP: 1208 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.2 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4718 kB (elbread=430 elab2=4154 kernel=134 sdf=0)
+# KERNEL: ASDB file was created in location H:\WORKSHOP\Verilog\BCDedx\Calculator\calculator\src\wave.asdb
+#  8:46 PM, Sunday, January 19, 2025
+#  Simulation has been initialized
+run
+# KERNEL: ADD: A= 10, B=  9 => led_out=0019, flag=0
+# KERNEL: SUB: A=  2, B=  7 => led_out=0004, flag=0
+# KERNEL: MUL: A=  3, B=  2 => led_out=0006, flag=0
+# KERNEL: DIV: A=100, B=  3 => led_out=0121, remainder=  1, quotient= 33, flag=0
+# KERNEL: DIV-ZERO: A= 20, B=  0 => led_out=ffff, flag=1
+# RUNTIME: Info: RUNTIME_0070 tb_top_8bit_alu.v (105): $stop called.
+# KERNEL: Time: 230 ns,  Iteration: 0,  Instance: /tb_top_8bit_alu,  Process: @INITIAL#36_1@.
+# KERNEL: Stopped at time 230 ns + 0.
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +m+tb_top_8bit_alu tb_top_8bit_alu
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "top_8bit_alu" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "controller_2bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "register_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "alu_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Finished. Using existing simulator library
+# SLP: 0 primitives and 189 (100.00%) other processes in SLP
+# SLP: 1208 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4718 kB (elbread=430 elab2=4154 kernel=134 sdf=0)
+# KERNEL: ASDB file was created in location H:\WORKSHOP\Verilog\BCDedx\Calculator\calculator\src\wave.asdb
+#  9:03 PM, Sunday, January 19, 2025
+#  Simulation has been initialized
+run
+# KERNEL: ADD: A= 10, B=  9 => led_out=0019, flag=0
+# KERNEL: SUB: A=  2, B=  7 => led_out=0004, flag=0
+# KERNEL: MUL: A=  3, B=  2 => led_out=0006, flag=0
+# KERNEL: DIV: A=100, B=  3 => led_out=0121, remainder=  1, quotient= 33, flag=0
+# KERNEL: DIV-ZERO: A= 20, B=  0 => led_out=ffff, flag=1
+# RUNTIME: Info: RUNTIME_0070 tb_top_8bit_alu.v (105): $stop called.
+# KERNEL: Time: 230 ns,  Iteration: 0,  Instance: /tb_top_8bit_alu,  Process: @INITIAL#36_1@.
+# KERNEL: Stopped at time 230 ns + 0.
+alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/ripple_sub_9bit.v
+# Unit top modules: ripple_sub_9bit.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/div_stage.v
+# Unit top modules: div_stage.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/div_8bit_logic.v
+# Unit top modules: div_8bit_logic.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# done
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +m+tb_top_8bit_alu tb_top_8bit_alu
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "top_8bit_alu" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "controller_2bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "register_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "alu_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/alu_8bit.v
+# Warning: VCP2597 alu_8bit.v : (28, 1): Some unconnected ports remain at instance: bcd_sub_inst. Module bcd_subtractor_8bit_eac has unconnected  port(s) : debug_Adder1.
+# Unit top modules: alu_8bit.
+# Compile success 0 Errors 1 Warnings  Analysis time: 0[s].
+# done
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "top_8bit_alu" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "controller_2bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "register_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "alu_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "div_8bit_logic" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "div_stage" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ripple_sub_9bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.2 [s]
+# SLP: Finished : 0.3 [s]
+# SLP: 0 primitives and 330 (100.00%) other processes in SLP
+# SLP: 1904 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.3 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4739 kB (elbread=432 elab2=4173 kernel=134 sdf=0)
+# KERNEL: ASDB file was created in location H:\WORKSHOP\Verilog\BCDedx\Calculator\calculator\src\wave.asdb
+#  9:10 PM, Sunday, January 19, 2025
+#  Simulation has been initialized
+run
+# KERNEL: ADD: A= 10, B=  9 => led_out=0019, flag=0
+# KERNEL: SUB: A=  2, B=  7 => led_out=0004, flag=0
+# KERNEL: MUL: A=  3, B=  2 => led_out=0006, flag=0
+# KERNEL: DIV: A=100, B=  3 => led_out=0121, remainder=  1, quotient= 33, flag=0
+# KERNEL: DIV-ZERO: A= 20, B=  0 => led_out=ffff, flag=1
+# RUNTIME: Info: RUNTIME_0070 tb_top_8bit_alu.v (105): $stop called.
+# KERNEL: Time: 230 ns,  Iteration: 0,  Instance: /tb_top_8bit_alu,  Process: @INITIAL#36_1@.
+# KERNEL: Stopped at time 230 ns + 0.
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +m+tb_top_8bit_alu tb_top_8bit_alu
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "top_8bit_alu" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "controller_2bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "register_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "alu_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "div_8bit_logic" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "div_stage" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ripple_sub_9bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/tb_top_8bit_alu.v
+# Unit top modules: tb_top_8bit_alu.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# done
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "top_8bit_alu" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "controller_2bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "register_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "alu_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "div_8bit_logic" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "div_stage" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ripple_sub_9bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.2 [s]
+# SLP: Finished : 0.2 [s]
+# SLP: 0 primitives and 330 (100.00%) other processes in SLP
+# SLP: 1904 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.3 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4739 kB (elbread=432 elab2=4173 kernel=134 sdf=0)
+# KERNEL: ASDB file was created in location H:\WORKSHOP\Verilog\BCDedx\Calculator\calculator\src\wave.asdb
+#  9:11 PM, Sunday, January 19, 2025
+#  Simulation has been initialized
+run
+# KERNEL: ADD: A= 10, B=  9 => led_out=0019, flag=0
+# KERNEL: SUB: A=  2, B=  7 => led_out=0004, flag=0
+# KERNEL: MUL: A=  3, B=  2 => led_out=0006, flag=0
+# KERNEL: DIV: A= 10, B=  3 => led_out=0103, remainder=  1, quotient=  3, flag=0
+# KERNEL: DIV-ZERO: A= 20, B=  0 => led_out=ffff, flag=1
+# RUNTIME: Info: RUNTIME_0070 tb_top_8bit_alu.v (105): $stop called.
+# KERNEL: Time: 230 ns,  Iteration: 0,  Instance: /tb_top_8bit_alu,  Process: @INITIAL#36_1@.
+# KERNEL: Stopped at time 230 ns + 0.
+alog -O2 -sve -msg 5 -sv2k17 -work calculator $dsn/src/register_8bit.v $dsn/src/alu_8bit.v $dsn/src/controller_2bit.v $dsn/src/top_8bit_alu.v $dsn/src/tb_top_8bit_alu.v $dsn/src/full_adder.v $dsn/src/ripple_adder_8bit.v $dsn/src/bcd_adder_8bit.v $dsn/src/bcd_subtractor_8bit.v $dsn/src/ripple_adder_4bit.v $dsn/src/bcd_subtractor_8bit_eac.v $dsn/src/ripple_adder_16bit.v $dsn/src/mul_8bit_logic.v $dsn/src/ripple_sub_9bit.v $dsn/src/div_stage.v $dsn/src/div_8bit_logic.v
+# Warning: VCP2597 alu_8bit.v : (28, 1): Some unconnected ports remain at instance: bcd_sub_inst. Module bcd_subtractor_8bit_eac has unconnected  port(s) : debug_Adder1.
+# Unit top modules: tb_top_8bit_alu bcd_subtractor_8bit.
+# Compile success 0 Errors 1 Warnings  Analysis time: 0[s].
+# done
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +m+tb_top_8bit_alu tb_top_8bit_alu
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "top_8bit_alu" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "controller_2bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "register_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "alu_8bit" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.2 [s]
+# SLP: Finished : 0.2 [s]
+# SLP: 0 primitives and 330 (100.00%) other processes in SLP
+# SLP: 1904 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.3 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4739 kB (elbread=432 elab2=4172 kernel=134 sdf=0)
+# KERNEL: ASDB file was created in location H:\WORKSHOP\Verilog\BCDedx\Calculator\calculator\src\wave.asdb
+#  9:11 PM, Sunday, January 19, 2025
+#  Simulation has been initialized
+run
+# KERNEL: ADD: A= 10, B=  9 => led_out=0019, flag=0
+# KERNEL: SUB: A=  2, B=  7 => led_out=0004, flag=0
+# KERNEL: MUL: A=  3, B=  2 => led_out=0006, flag=0
+# KERNEL: DIV: A= 10, B=  3 => led_out=0103, remainder=  1, quotient=  3, flag=0
+# KERNEL: DIV-ZERO: A= 20, B=  0 => led_out=ffff, flag=1
+# RUNTIME: Info: RUNTIME_0070 tb_top_8bit_alu.v (105): $stop called.
+# KERNEL: Time: 230 ns,  Iteration: 0,  Instance: /tb_top_8bit_alu,  Process: @INITIAL#36_1@.
+# KERNEL: Stopped at time 230 ns + 0.
+endsim
+# VSIM: Simulation has finished.

@@ -1,4 +1,4 @@
-Active-HDL 15.0.261.9132 2025-01-19 18:55:24
+Active-HDL 15.0.261.9132 2025-01-19 21:13:07
 
 Elaboration top modules:
 Verilog Module                tb_top_8bit_alu
@@ -14,10 +14,15 @@ register_8bit           | calculator |      | 15.0.261.9132 (Windows64) | -O2 -s
 alu_8bit                | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
 bcd_adder_8bit          | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
 bcd_subtractor_8bit_eac | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+mul_8bit_logic          | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+div_8bit_logic          | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
 ripple_adder_4bit       | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
 full_adder              | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
 bcd_adder_4bit          | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
 second_pass_logic       | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+ripple_adder_16bit      | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+div_stage               | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
+ripple_sub_9bit         | calculator |      | 15.0.261.9132 (Windows64) | -O2 -sv2k17
 ----------------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------
@@ -25,9 +30,3 @@ Library                 | Comment
 ----------------------------------------------------------------------------------------------
 calculator              | None
 ----------------------------------------------------------------------------------------------
-
-
-Simulation Options: asim -O5 +access +r +m+tb_top_8bit_alu tb_top_8bit_alu
-
-
-The performance of simulation is reduced. Version Student Edition

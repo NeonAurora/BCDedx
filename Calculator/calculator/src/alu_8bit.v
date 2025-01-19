@@ -36,18 +36,29 @@ module alu_8bit (
     // MUL (binary for now) (op=10)
     // 8-bit x 8-bit => up to 16 bits
     //------------------------------------------------
-    wire [15:0] prod_mul = a * b; 
+    wire [15:0] prod_mul;
+	mul_8bit_logic mul_logic_inst (
+        .A(a),
+        .B(b),
+        .product(prod_mul)
+    );
     // Overflow if upper byte != 0
     wire        overflow_mul = (prod_mul[15:8] != 8'h00);
 
-    //------------------------------------------------
-    // DIV (binary for now) (op=11)
-    // Remainder in high byte, quotient in low byte
-    //------------------------------------------------
-    wire       div_by_zero = (b == 8'h00);
-    wire [7:0] quotient    = div_by_zero ? 8'h00 : (a / b);
-    wire [7:0] remainder   = div_by_zero ? 8'h00 : (a % b);
-
+	// -------------- DIV (logic-based) --------------
+	wire div_by_zero = (b == 8'h00);
+	
+	// Create outputs from logic-based divider
+	wire [7:0] quotient;
+	wire [7:0] remainder;
+	
+	div_8bit_logic div_logic_inst (
+	    .A(a),
+	    .B(b),
+	    .Q(quotient),
+	    .R(remainder)
+	);
+	
     always @(*) begin
         case (op)
             // ------------------ BCD ADD ------------------

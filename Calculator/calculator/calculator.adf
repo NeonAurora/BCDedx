@@ -31,8 +31,12 @@ UCF=
 /bcd_adder_8bit.v=-1
 /bcd_subtractor_8bit.v=-1
 /ripple_adder_4bit.v=-1
-/tb_top_8bit_alu.v=-1
 /bcd_subtractor_8bit_eac.v=-1
+/ripple_adder_16bit.v=-1
+/mul_8bit_logic.v=-1
+/ripple_sub_9bit.v=-1
+/div_stage.v=-1
+/div_8bit_logic.v=-1
 [Files.Data]
 .\src\register_8bit.v=Verilog Source Code
 .\src\alu_8bit.v=Verilog Source Code
@@ -44,8 +48,12 @@ UCF=
 .\src\bcd_adder_8bit.v=Verilog Source Code
 .\src\bcd_subtractor_8bit.v=Verilog Source Code
 .\src\ripple_adder_4bit.v=Verilog Source Code
-.\src\tb_top_8bit_alu.v=Verilog Source Code
 .\src\bcd_subtractor_8bit_eac.v=Verilog Source Code
+.\src\ripple_adder_16bit.v=Verilog Source Code
+.\src\mul_8bit_logic.v=Verilog Source Code
+.\src\ripple_sub_9bit.v=Verilog Source Code
+.\src\div_stage.v=Verilog Source Code
+.\src\div_8bit_logic.v=Verilog Source Code
 [HierarchyViewer]
 HierarchyInformation=
 ShowHide=ShowTopLevel

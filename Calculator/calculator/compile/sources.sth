@@ -1,8 +1,13 @@
 [Files List]
 C:/Aldec/Active-HDL-Student-Edition/vlib/std/src/standard.vhd=S
 H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/full_adder.v=S
-H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/bcd_subtractor_8bit_eac.v=S
 H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/ripple_adder_4bit.v=S
+H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/ripple_sub_9bit.v=S
+H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/div_stage.v=S
+H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/ripple_adder_16bit.v=S
+H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/bcd_subtractor_8bit_eac.v=S
+H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/div_8bit_logic.v=S
+H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/mul_8bit_logic.v=S
 H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/bcd_adder_8bit.v=S
 H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/alu_8bit.v=S
 H:/WORKSHOP/Verilog/BCDedx/Calculator/calculator/src/register_8bit.v=S

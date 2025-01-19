@@ -3,10 +3,10 @@ TemplateId=2
 tab=lu
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\calculator\src/alu_8bit.v|]
 TemplateId=2
+ActiveDocument=1
 tab=lu
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\calculator\src/controller_2bit.v|]
 TemplateId=2
-ActiveDocument=1
 tab=lu
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\calculator\src/top_8bit_alu.v|]
 TemplateId=2

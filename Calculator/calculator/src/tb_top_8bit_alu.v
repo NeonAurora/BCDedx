@@ -70,9 +70,9 @@ module tb_top_8bit_alu;
                  DUT.regA_out, DUT.regB_out, led_out, flag_out);
 
         // 3) MUL: A=15, B=10
-        inA = 8'd15;
+        inA = 8'd3;
         btnLoadA = 1; #10 btnLoadA = 0;
-        inB = 8'd10;
+        inB = 8'd2;
         btnLoadB = 1; #10 btnLoadB = 0;
 
         op = 2'b10;  // Mul
@@ -81,7 +81,7 @@ module tb_top_8bit_alu;
                  DUT.regA_out, DUT.regB_out, led_out, flag_out);
 
         // 4) DIV: A=100, B=3
-        inA = 8'd100;
+        inA = 8'd15;
         btnLoadA = 1; #10 btnLoadA = 0;
         inB = 8'd3;
         btnLoadB = 1; #10 btnLoadB = 0;
