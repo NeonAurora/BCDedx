@@ -1,33 +1,36 @@
-// File: top_8bit_alu.v	   
-
 module top_8bit_alu (
     input  wire       clk,
     input  wire       rst,
-    input  wire [7:0] inA,      // 8-bit input for A
-    input  wire [7:0] inB,      // 8-bit input for B
+    input  wire [7:0] inA,
+    input  wire [7:0] inB,
     input  wire       btnLoadA,
     input  wire       btnLoadB,
-    input  wire [1:0] op,       // 00=Add, 01=Sub, 10=Mul, 11=Div
-    output wire [15:0] led_out, // 16-bit ALU result
-    output wire        flag_out // carry/borrow/overflow/div0
+    input  wire [1:0] op,      // 00=Add, 01=Sub, 10=Mul, 11=Div
+    output wire [15:0] led_out,
+    output wire        flag_out
 );
 
-    // Internal signals
+    // Controller signals
     wire loadA_sig, loadB_sig;
-    wire [7:0] regA_out;
-    wire [7:0] regB_out;
-    wire [15:0] alu_result;
-    wire        status;
+    wire selAdd, selSub, selMul, selDiv;
 
-    // Controller (unchanged)
+    // 1) Controller
     controller_2bit controller_inst (
         .btnLoadA(btnLoadA),
         .btnLoadB(btnLoadB),
         .loadA(loadA_sig),
-        .loadB(loadB_sig)
+        .loadB(loadB_sig),
+        // decode op => 4 select signals
+        .op(op),
+        .selAdd(selAdd),
+        .selSub(selSub),
+        .selMul(selMul),
+        .selDiv(selDiv)
     );
 
-    // 8-bit Register A
+    // 2) Registers for A, B
+    wire [7:0] regA_out, regB_out;
+
     register_8bit regA (
         .clk(clk),
         .rst(rst),
@@ -36,7 +39,6 @@ module top_8bit_alu (
         .q(regA_out)
     );
 
-    // 8-bit Register B
     register_8bit regB (
         .clk(clk),
         .rst(rst),
@@ -45,17 +47,23 @@ module top_8bit_alu (
         .q(regB_out)
     );
 
-    // 8-bit ALU
+    // 3) ALU
+    wire [15:0] alu_result;
+    wire        alu_status;
+
     alu_8bit alu_inst (
         .a(regA_out),
         .b(regB_out),
-        .op(op),
+        .selAdd(selAdd),
+        .selSub(selSub),
+        .selMul(selMul),
+        .selDiv(selDiv),
         .result(alu_result),
-        .status(status)
+        .status(alu_status)
     );
 
-    // Outputs
+    // 4) Outputs
     assign led_out  = alu_result;
-    assign flag_out = status;
+    assign flag_out = alu_status;
 
 endmodule

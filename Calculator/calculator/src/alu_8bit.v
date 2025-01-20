@@ -1,112 +1,104 @@
-// File: alu_8bit.v												   
+// File: alu_8bit.v
+// A: 8 bits, B: 8 bits
+// selAdd=1 => BCD Add, selSub=1 => BCD Sub, selMul=1 => Mul, selDiv=1 => Div		
 
 module alu_8bit (
     input  wire [7:0] a,
     input  wire [7:0] b,
-    input  wire [1:0] op,       // 00=Add, 01=Sub, 10=Mul, 11=Div
-    output reg  [15:0] result,  // 16-bit result to hold largest product
-    output reg         status   // carry/borrow/overflow/div0
+
+    // Instead of 'op', we get 4 select signals
+    input  wire       selAdd,
+    input  wire       selSub,
+    input  wire       selMul,
+    input  wire       selDiv,
+
+    output wire [15:0] result,
+    output wire        status
 );
 
-    //------------------------------------------------
-    // BCD ADD (op=00)
-    //------------------------------------------------
+    //-------------------------------------------
+    // 1) BCD ADD
+    //-------------------------------------------
     wire [7:0] bcd_sum;
-    wire       bcd_carry;  // 1 if sum >= 100 decimal
-    bcd_adder_8bit bcd_add_inst (
+    wire       bcd_carry;
+    bcd_adder_8bit add_inst (
         .A(a),
         .B(b),
         .SUM_BCD(bcd_sum),
         .CARRY_OUT(bcd_carry)
     );
+    wire [15:0] result_add  = {8'h00, bcd_sum};
+    wire        status_add  = bcd_carry;
 
-    //------------------------------------------------
-    // BCD SUB (op=01)
-    //------------------------------------------------
+    //-------------------------------------------
+    // 2) BCD SUB
+    //-------------------------------------------
     wire [7:0] bcd_diff;
-    wire       bcd_borrow; // 1 if A < B
-    bcd_subtractor_8bit_eac bcd_sub_inst (
+    wire       bcd_borrow;
+    bcd_subtractor_8bit_eac sub_inst (
         .A(a),
         .B(b),
         .DIFF_BCD(bcd_diff),
         .EAC(bcd_borrow)
     );
+    wire [15:0] result_sub  = {8'h00, bcd_diff};
+    wire        status_sub  = bcd_borrow; // or invert if you want the opposite
 
-    //------------------------------------------------
-    // MUL (binary for now) (op=10)
-    // 8-bit x 8-bit => up to 16 bits
-    //------------------------------------------------
-    wire [15:0] prod_mul;
-	mul_8bit_logic mul_logic_inst (
+    //-------------------------------------------
+    // 3) MUL: logic-based
+    //-------------------------------------------
+    wire [15:0] product_mul;
+    mul_8bit_logic mul_inst (
         .A(a),
         .B(b),
-        .product(prod_mul)
+        .product(product_mul)
     );
-    // Overflow if upper byte != 0
-    wire        overflow_mul = (prod_mul[15:8] != 8'h00);
+    wire overflow_mul = (product_mul[15:8] != 8'h00);
+    wire [15:0] result_mul  = product_mul;
+    wire        status_mul  = overflow_mul;
 
-	// -------------- DIV (logic-based) --------------
-	wire div_by_zero = (b == 8'h00);
-	
-	// Create outputs from logic-based divider
-	wire [7:0] quotient;
-	wire [7:0] remainder;
-	
-	div_8bit_logic div_logic_inst (
-	    .A(a),
-	    .B(b),
-	    .Q(quotient),
-	    .R(remainder)
-	);
-	
-    always @(*) begin
-        case (op)
-            // ------------------ BCD ADD ------------------
-            2'b00: begin
-                // bcd_sum is 8 bits of two-digit BCD,
-                // if sum >= 100 decimal => bcd_carry=1
-                // We'll place the 8-bit BCD result in the low byte of 'result'
-                // The top 8 bits = 0
-                result = {8'h00, bcd_sum}; 
-                // status = bcd_carry
-                status = bcd_carry;
-            end
+    //-------------------------------------------
+    // 4) DIV: logic-based
+    //-------------------------------------------
+    wire div_by_zero = (b == 8'h00);
 
-            // ------------------ BCD SUB ------------------
-            2'b01: begin
-                // bcd_diff is 8 bits of two-digit BCD
-                // if A < B => bcd_borrow=1
-                result = {8'h00, bcd_diff};
-                status = bcd_borrow;
-            end
+    wire [7:0] quotient_div;
+    wire [7:0] remainder_div;
+    div_8bit_logic div_inst (
+        .A(a),
+        .B(b),
+        .Q(quotient_div),
+        .R(remainder_div)
+    );
+    wire [15:0] result_div = div_by_zero ? 16'hFFFF :
+                              { remainder_div, quotient_div };
+    wire        status_div = div_by_zero ? 1'b1 : 1'b0;
 
-            // ------------------ BINARY MUL ------------------
-            2'b10: begin
-                // 16-bit product
-                result = prod_mul;
-                // overflow if product > 255 decimal
-                status = overflow_mul;
-            end
+    //-------------------------------------------
+    // 5) WIRE-LEVEL MUX
+    //    We do a "one-hot" style mux:
+    //    if selAdd=1 => choose add
+    //    if selSub=1 => choose sub
+    //    if selMul=1 => choose mul
+    //    if selDiv=1 => choose div
+    //-------------------------------------------
+    // In practice, if more than one sel is 1, the top lines might "win."
+    // We'll assume exactly one is 1 => add, sub, mul, or div.
 
-            // ------------------ BINARY DIV ------------------
-            2'b11: begin
-                if (div_by_zero) begin
-                    // error code
-                    result = 16'hFFFF;
-                    status = 1'b1;
-                end else begin
-                    // remainder in high byte, quotient in low byte
-                    result = { remainder, quotient };
-                    status = 1'b0;
-                end
-            end
+    wire [15:0] mux_result = (selAdd ? result_add  :
+                              selSub ? result_sub  :
+                              selMul ? result_mul  :
+                                       result_div );
 
-            // ------------------ Default ------------------
-            default: begin
-                result = 16'h0000;
-                status = 1'b0;
-            end
-        endcase
-    end
+    wire        mux_status = (selAdd ? status_add  :
+                              selSub ? status_sub  :
+                              selMul ? status_mul  :
+                                       status_div );
+
+    //-------------------------------------------
+    // Final Outputs
+    //-------------------------------------------
+    assign result = mux_result;
+    assign status = mux_status;
 
 endmodule
