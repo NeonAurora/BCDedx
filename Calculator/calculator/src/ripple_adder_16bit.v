@@ -1,6 +1,3 @@
-// File: ripple_adder_16bit.v
-// Builds a 16-bit adder from four 4-bit ripple adders.	
-
 module ripple_adder_16bit (
     input  wire [15:0] a,
     input  wire [15:0] b,
@@ -10,7 +7,7 @@ module ripple_adder_16bit (
 );
     wire c1, c2, c3;
 
-    // lower 4 bits
+
     ripple_adder_4bit ra0 (
         .a(a[3:0]),
         .b(b[3:0]),
@@ -19,7 +16,7 @@ module ripple_adder_16bit (
         .cout(c1)
     );
 
-    // next 4 bits
+
     ripple_adder_4bit ra1 (
         .a(a[7:4]),
         .b(b[7:4]),
@@ -28,7 +25,7 @@ module ripple_adder_16bit (
         .cout(c2)
     );
 
-    // next 4 bits
+
     ripple_adder_4bit ra2 (
         .a(a[11:8]),
         .b(b[11:8]),
@@ -37,7 +34,7 @@ module ripple_adder_16bit (
         .cout(c3)
     );
 
-    // top 4 bits
+
     ripple_adder_4bit ra3 (
         .a(a[15:12]),
         .b(b[15:12]),

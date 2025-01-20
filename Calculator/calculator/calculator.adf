@@ -37,6 +37,8 @@ UCF=
 /ripple_sub_9bit.v=-1
 /div_stage.v=-1
 /div_8bit_logic.v=-1
+/div_stage.v=-1
+/alu_8bit.v=-1
 [Files.Data]
 .\src\register_8bit.v=Verilog Source Code
 .\src\alu_8bit.v=Verilog Source Code
@@ -54,6 +56,8 @@ UCF=
 .\src\ripple_sub_9bit.v=Verilog Source Code
 .\src\div_stage.v=Verilog Source Code
 .\src\div_8bit_logic.v=Verilog Source Code
+.\src\div_stage.v=Verilog Source Code
+.\src\alu_8bit.v=Verilog Source Code
 [HierarchyViewer]
 HierarchyInformation=
 ShowHide=ShowTopLevel

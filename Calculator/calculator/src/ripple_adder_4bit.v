@@ -1,5 +1,3 @@
-// File: ripple_adder_4bit.v
-
 module ripple_adder_4bit (
     input  wire [3:0] a,
     input  wire [3:0] b,
@@ -7,10 +5,8 @@ module ripple_adder_4bit (
     output wire [3:0] sum,
     output wire       cout
 );
-    // internal carry lines
     wire c1, c2, c3;
 
-    // bit 0
     full_adder fa0 (
         .a   (a[0]),
         .b   (b[0]),
@@ -19,7 +15,7 @@ module ripple_adder_4bit (
         .cout(c1)
     );
 
-    // bit 1
+
     full_adder fa1 (
         .a   (a[1]),
         .b   (b[1]),
@@ -28,7 +24,7 @@ module ripple_adder_4bit (
         .cout(c2)
     );
 
-    // bit 2
+ 
     full_adder fa2 (
         .a   (a[2]),
         .b   (b[2]),
@@ -37,7 +33,6 @@ module ripple_adder_4bit (
         .cout(c3)
     );
 
-    // bit 3
     full_adder fa3 (
         .a   (a[3]),
         .b   (b[3]),

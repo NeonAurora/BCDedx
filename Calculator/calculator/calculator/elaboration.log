@@ -1,4 +1,4 @@
-Active-HDL 15.0.261.9132 2025-01-20 08:42:09
+Active-HDL 15.0.261.9132 2025-01-20 11:49:27
 
 Elaboration top modules:
 Verilog Module                tb_top_8bit_alu
@@ -30,9 +30,3 @@ Library                 | Comment
 ----------------------------------------------------------------------------------------------
 calculator              | None
 ----------------------------------------------------------------------------------------------
-
-
-Simulation Options: asim -O5 +access +r +m+tb_top_8bit_alu tb_top_8bit_alu
-
-
-The performance of simulation is reduced. Version Student Edition

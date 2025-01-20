@@ -1,4 +1,3 @@
-// File: register_8bit.v
 module register_8bit (
     input  wire       clk,
     input  wire       rst,

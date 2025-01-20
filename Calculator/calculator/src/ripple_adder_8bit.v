@@ -1,16 +1,12 @@
-// File: ripple_adder_8bit.v	
-
 module ripple_adder_8bit (
     input  wire [7:0] a,
     input  wire [7:0] b,
     input  wire       cin,
     output wire [7:0] sum,
     output wire       cout
-);
-    // internal carry lines
+);	 
     wire c1, c2, c3, c4, c5, c6, c7;
-
-    // bit 0
+			
     full_adder fa0(
         .a   (a[0]),
         .b   (b[0]),
@@ -18,8 +14,7 @@ module ripple_adder_8bit (
         .sum (sum[0]),
         .cout(c1)
     );
-
-    // bit 1
+		   
     full_adder fa1(
         .a   (a[1]),
         .b   (b[1]),
@@ -27,8 +22,7 @@ module ripple_adder_8bit (
         .sum (sum[1]),
         .cout(c2)
     );
-
-    // bit 2
+			 
     full_adder fa2(
         .a   (a[2]),
         .b   (b[2]),
@@ -36,8 +30,7 @@ module ripple_adder_8bit (
         .sum (sum[2]),
         .cout(c3)
     );
-
-    // bit 3
+			
     full_adder fa3(
         .a   (a[3]),
         .b   (b[3]),
@@ -45,8 +38,7 @@ module ripple_adder_8bit (
         .sum (sum[3]),
         .cout(c4)
     );
-
-    // bit 4
+			
     full_adder fa4(
         .a   (a[4]),
         .b   (b[4]),
@@ -54,8 +46,7 @@ module ripple_adder_8bit (
         .sum (sum[4]),
         .cout(c5)
     );
-
-    // bit 5
+			 
     full_adder fa5(
         .a   (a[5]),
         .b   (b[5]),
@@ -63,8 +54,7 @@ module ripple_adder_8bit (
         .sum (sum[5]),
         .cout(c6)
     );
-
-    // bit 6
+			 
     full_adder fa6(
         .a   (a[6]),
         .b   (b[6]),
@@ -72,8 +62,7 @@ module ripple_adder_8bit (
         .sum (sum[6]),
         .cout(c7)
     );
-
-    // bit 7
+			
     full_adder fa7(
         .a   (a[7]),
         .b   (b[7]),

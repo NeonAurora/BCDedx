@@ -1,15 +1,12 @@
 module div_stage (
-    input  wire [8:0] inRem,    // 9-bit remainder from previous stage
-    input  wire       topBit,   // next bit from A
-    input  wire [7:0] divisor,  // B
-    output wire [8:0] outRem,   // new remainder
-    output wire       qBit      // 1 => remainder >= divisor
-);
-    // 1) Shift left by 1: [8:0] => <<1 => [8:1], new LSB= topBit
+    input  wire [8:0] inRem,    
+    input  wire       topBit,   
+    input  wire [7:0] divisor,  
+    output wire [8:0] outRem,   
+    output wire       qBit      
+);														 
     wire [8:0] shifted = {inRem[7:0], topBit};
-
-    // 2) Subtract divisor from shifted => 9-bit sub
-    // We treat 'divisor' as an 9-bit value with top bit=0
+														   
     wire [8:0] divisor_9 = {1'b0, divisor};
 
     wire [8:0] diff;
@@ -21,9 +18,7 @@ module div_stage (
         .diff(diff),
         .borrow(borrow)
     );
-
-    // If no borrow => shifted >= divisor => remainder= diff, qBit=1
-    // If borrow => remainder= shifted, qBit=0
+											   
     assign qBit   = ~borrow;
     assign outRem = borrow ? shifted : diff;
 endmodule
